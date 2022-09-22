@@ -3,10 +3,11 @@
 int main(){
     
     int i,n;
-    bool is_prime = true;
     
     while(std::cin>>n){
-
+        
+        bool is_prime = true;
+        
         if(n<=1){
             is_prime = false;
         }
@@ -20,9 +21,9 @@ int main(){
         }
     
         if(is_prime)
-            std::cout << n << " is a prime: True";
+            std::cout  << n << " is a prime: True\n";
         else
-            std::cout << n << "is a prime: False";
+            std::cout  << n << " is a prime: False\n";
     }
     return 0;
 }
