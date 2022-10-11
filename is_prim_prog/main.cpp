@@ -1,29 +1,32 @@
-#include<iostream>
+#include <cmath>
+#include <iostream>
 
-int main(){
-    
-    int i,n;
-    
-    while(std::cin>>n){
-        
+int main()
+{
+    int i, n;
+
+    while (std::cin >> n)
+    {
         bool is_prime = true;
-        
-        if(n<=1){
+
+        if (n <= 1)
+        {
             is_prime = false;
         }
 
-        for(i = 2; i <= n/2; ++i){
-            if(n % i == 0)
+        for (i = 2; i <= std::sqrt(n); ++i)
+        {
+            if (n % i == 0)
             {
                 is_prime = false;
                 break;
             }
         }
-    
-        if(is_prime)
-            std::cout  << n << " is a prime: True\n";
+
+        if (is_prime)
+            std::cout << n << " is a prime: True\n";
         else
-            std::cout  << n << " is a prime: False\n";
+            std::cout << n << " is a prime: False\n";
     }
     return 0;
 }
