@@ -1,31 +1,28 @@
-#include <cmath>
 #include <iostream>
 
-int main()
+bool is_prime(unsigned long x)
 {
-    long long i, n;
+    if (x <= 1 || x%2 == 0 && x != 2) {
+        return false;
+    }
 
-    while (std::cin >> n)
+    for (unsigned i = 3; i <= x/2; i+=2) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(int argc, char *argv[])
+{
+    unsigned long n;
+    while(std::cin >> n)
     {
-        bool is_prime = true;
-
-        if (n <= 1)
+        if(is_prime(n))
         {
-            is_prime = false;
-        }
-
-        for (i = 2; i <= std::sqrt(n); ++i)
-        {
-            if (n % i == 0)
-            {
-                is_prime = false;
-                break;
-            }
-        }
-
-        if (is_prime)
             std::cout << n << " is a prime: True\n";
-        else
+        }else
             std::cout << n << " is a prime: False\n";
     }
     return 0;
